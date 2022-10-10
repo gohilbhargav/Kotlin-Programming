@@ -1,0 +1,87 @@
+// Bank Management System
+
+import java.util.*
+
+fun main()
+{
+    bank()
+}
+fun bank()
+{
+    var bankSystem ="""
+        
+        BANK MANAGEMENT SYSTEM
+
+               1) press 1 for create account
+               2) press 2 deposite amount
+               3) press 3 withdraw amount
+    """
+    println(bankSystem)
+    var choice : Int
+    var sc = Scanner(System.`in`)
+    println("Press for 1 to 3")
+    choice = sc.nextInt()
+
+    when(choice)
+    {
+        1 -> createAccount()
+        2 -> depositeAmount()
+        3 -> withdrawAmount()
+        else -> ("Invalid Choice")
+    }
+}
+fun createAccount() {
+    var sc = Scanner(System.`in`)
+    var name: String
+    var cnumber: Long
+    var email: String
+    var adharNumber : Long
+    var pancardNumber : Long
+    println("Create Your Account")
+    println()
+    println("Enter Your name : ")
+    name = sc.next()
+    println("Enter Your Contact Number : ")
+    cnumber = sc.nextLong()
+    println("Enter Your Email : ")
+    email = sc.next()
+    println("Enter Your Adhar Number : ")
+    adharNumber = sc.nextLong()
+    println("Enter Your Pancard Number : ")
+    pancardNumber = sc.nextLong()
+    println("Name : $name")
+    println("Contact Number : $cnumber")
+    println("Email : $email")
+    println("Adhar Number : $adharNumber")
+    println("Pancard Number : $pancardNumber")
+}
+
+fun depositeAmount()
+{
+    var sc = Scanner(System.`in`)
+    var balance = 25000
+    var amt : Int
+    println()
+    println("Enter Your Deposite Amount : ")
+    amt = sc.nextInt()
+    println("Amount : $balance + $amt")
+    println("Total Amount = ${balance+amt}")
+
+}
+
+class withdrawAmount
+{
+    fun input()
+    {
+        var balance = 25000
+        var amt : Int
+        var sc = Scanner(System.`in`)
+        println()
+        println("Enter Your withdraw Amount : ")
+        amt = sc.nextInt()
+        println("Amount : $balance + $amt")
+        println("Total Amount = ${balance-amt}")
+    }
+
+}
+

@@ -1,0 +1,184 @@
+// KBC App
+
+import java.util.Scanner
+
+fun main()
+{
+    questionAndAnswer()
+}
+fun questionAndAnswer()
+{
+    var sc = Scanner(System.`in`)
+    var question = listOf<String>(question1() ,question2(), question3(), question4(),question5(), question6(), question7(), question8(), question9(), question10())
+    var answer = listOf<String>("C","D","C","C","D","C","A","C","D","A")
+    var i : Int = 0
+
+    for (item in 0..9)
+    {
+        println(question[item])
+
+        while (true)
+        {
+            println("Enter Your Answer : ")
+            var audianceAnswer : String = sc.next()
+
+            if (audianceAnswer >= "A" && audianceAnswer <= "D")
+            {
+                if (audianceAnswer == answer[item])
+                {
+                    i++
+                    println("Correct Answer")
+                    println("Score : $i / 10")
+                    break
+                }
+                else
+                {
+                    println("Wrong Answer")
+                    println("Score : $i / 10")
+                    break
+                }
+            }
+            else
+            {
+                println("Invalid Key")
+                continue
+            }
+        }
+        if (item == 9)
+        {
+            return
+        }
+        println("Enter a to z key for the next question")
+        var keyName=sc.next()
+    }
+}
+
+fun question1():String
+{
+    var question = """
+   
+    1 : In which year the capital of Gujarat shifted from Ahmedabad to Gandhinagar.
+        A. 1965
+        B. 1968
+        C. 1970
+        D. 1982
+   """
+    return question
+}
+
+fun question2():String
+{
+    var question = """
+   
+    2 : Who was the first Chief Minister of Gujarat
+        A. Babubhai j. Patel
+        B. Chimanbhai Patel
+        C. Balwantrai Mehta
+        D. Jivraj Nnarayan Mehta
+   """
+    return question
+}
+
+fun question3():String
+{
+    var question = """
+   
+    3 : Which one is the longest river in Gujarat
+        A. Sabarmati
+        B. Mahi
+        C. Narmada
+        D. Tapi
+   """
+    return question
+}
+
+fun question4():String
+{
+    var question = """
+   
+    4 : September 27 is celebrated every year as
+        A. Teachers' Day
+        B. National Integration Day
+        C. World Tourism Day
+        D. Internation Literacy Day
+   """
+    return question
+}
+
+fun question5():String
+{
+    var question = """
+   
+    5 : Who is the author of the epic "Meghdoot"
+        A. Vishakadatta
+        B. Valmiki
+        C. Banabhatta
+        D. Kalidas
+   """
+    return question
+}
+
+fun question6():String
+{
+    var question = """
+   
+    6 : Which of the following is observed as Sports Day every year.
+        A. 22nd April
+        B. 26th July
+        C. 29th August
+        D. 2nd October
+   """
+    return question
+}
+
+fun question7():String
+{
+    var question = """
+   
+    7 : World Health Day is observed on
+        A. Apr 7
+        B. Mar 6
+        C. Mar 15
+        D. Apr 28
+   """
+    return question
+}
+
+fun question8():String
+{
+    var question = """
+   
+    8 : Pongal is a popular festival of which state.
+        A. Karnataka
+        B. Kerala
+        C. Tamil Nadu
+        D. Andhra Pradesh
+   """
+    return question
+}
+
+fun question9():String
+{
+    var question = """
+   
+    9 : Rath Yatra is famous festival at 
+        A. Ayodhya
+        B. Mathura
+        C. Dwaraka
+        D. Puri
+   """
+    return question
+}
+
+fun question10():String
+{
+    var question = """
+   
+    10 : The International Literacy Day is observed on
+         A. Sep 8
+         B. Nov 28
+         C. May 2
+         D. Sep 22
+   """
+    return question
+}

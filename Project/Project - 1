@@ -1,0 +1,165 @@
+// Shopping Bill
+
+import java.util.Scanner
+
+fun main()
+{
+    var sc = Scanner(System.`in`)
+
+    var name : String
+    var cnumber : Long
+    var age : Int
+    var gender : String
+    var todayprice : Int = 4680
+    var gram : Int
+    var goldprice : Int
+    var discount : Int = 0
+    var makingcharges : Int = 540
+    var discountprice : Int
+    var totalbill : Int
+
+    println("Enter Name : ")
+    name = sc.next()
+
+    while (true)
+    {
+        println("Enter Contact Number : ")
+        cnumber = sc.nextLong()
+
+        if (cnumber.toString().length !=10)
+        {
+            continue;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    while (true)
+    {
+        println("Enter Age : ")
+        age = sc.nextInt()
+
+        if (age <= 1 || age > 100)
+        {
+            println("Your Age 1 to 100")
+            continue;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    while (true)
+    {
+        println("Male for 'm'")
+        println("Female for 'f'")
+        println("Enter Gender : ")
+        gender = sc.next()
+
+        if (gender == "m" || gender == "f")
+        {
+            break;
+        }
+        else
+        {
+            continue;
+        }
+    }
+
+    println("Enter GRAM : ")
+    gram = sc.nextInt()
+
+    goldprice = todayprice * gram
+
+    if(gender == "m")
+    {
+        if(age >= 65)
+        {
+            if(goldprice >= 100000 && goldprice < 200000)
+            {
+                discount = 20
+            }
+            else if(goldprice >= 200000 && goldprice < 300000)
+            {
+                discount = 30
+            }
+            else if(goldprice >= 300000)
+            {
+                discount = 50
+            }
+        }
+        else if(age <65)
+        {
+            if(goldprice >= 100000 && goldprice < 200000)
+            {
+                discount = 10
+            }
+            else if(goldprice >= 200000 && goldprice < 300000)
+            {
+                discount = 20
+            }
+            else if(goldprice >= 300000)
+            {
+                discount = 30
+            }
+        }
+    }
+
+    else if(gender == "f")
+    {
+        if(age >= 65)
+        {
+            if(goldprice >= 100000 && goldprice < 200000)
+            {
+                discount = 25
+            }
+            else if(goldprice >= 200000 && goldprice < 300000)
+            {
+                discount = 35
+            }
+            else if(goldprice >= 300000)
+            {
+                discount = 55
+            }
+        }
+        else if(age < 65)
+        {
+            if(goldprice >= 100000 && goldprice < 200000)
+            {
+                discount = 15
+            }
+            else if(goldprice >= 200000 && goldprice < 300000)
+            {
+                discount = 25
+            }
+            else if(goldprice >= 300000)
+            {
+                discount = 35
+            }
+        }
+    }
+
+    discountprice = (goldprice * discount) / 100
+
+    totalbill = goldprice + makingcharges - discountprice
+
+    println()
+    println("Name : $name")
+    println("Age : $age")
+    println("Gender : $gender")
+    println("Contact Number : $cnumber")
+    println("----------------------------")
+    println("Gold Price Today : $todayprice")
+    println("Making Charges : $makingcharges")
+    println("Discount : $discount %")
+    println("----------------------------")
+    println("Total : $todayprice * $gram - $discount + $makingcharges")
+    println("----------------------------")
+    println("Net Payable Price : $totalbill")
+
+}
+
+
